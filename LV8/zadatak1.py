@@ -24,20 +24,20 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 import datetime
 import os
 
-# 1. Učitavanje i priprema podataka
+
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 
-# Normalizacija i reshaping (dodajemo kanal)
+
 x_train = x_train.astype("float32") / 255.0
 x_test = x_test.astype("float32") / 255.0
 x_train = np.expand_dims(x_train, -1)
 x_test = np.expand_dims(x_test, -1)
 
-# Kategorizacija (one-hot encoding)
+
 y_train_cat = to_categorical(y_train, 10)
 y_test_cat = to_categorical(y_test, 10)
 
-# 2. Izgradnja modela (Fully Convolutional Network)
+
 model = models.Sequential([
     layers.Conv2D(32, kernel_size=(3,3), activation='relu', input_shape=(28,28,1)),
     layers.Conv2D(64, kernel_size=(3,3), activation='relu'),
@@ -53,7 +53,7 @@ model = models.Sequential([
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 model.summary()
 
-# 3. Callback-ovi za TensorBoard i čuvanje modela
+
 log_dir = "logs/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
 tensorboard_cb = callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
 
@@ -65,7 +65,7 @@ checkpoint_cb = callbacks.ModelCheckpoint(
     verbose=1
 )
 
-# 4. Treniranje modela s 10% podataka za validaciju
+
 history = model.fit(
     x_train, y_train_cat,
     validation_split=0.1,
@@ -74,7 +74,7 @@ history = model.fit(
     callbacks=[tensorboard_cb, checkpoint_cb]
 )
 
-# 5. Učitavanje najboljeg modela i evaluacija
+
 best_model = tf.keras.models.load_model('best_model.h5')
 
 train_pred = best_model.predict(x_train)
@@ -89,7 +89,7 @@ test_acc = accuracy_score(y_test, test_labels)
 print(f"\nTočnost na SKUPU ZA UČENJE: {train_acc:.4f}")
 print(f"Točnost na TESTNOM SKUPU: {test_acc:.4f}")
 
-# 6. Matrice zabune
+
 def plot_confusion_matrix(y_true, y_pred, title):
     cm = confusion_matrix(y_true, y_pred)
     plt.figure(figsize=(8,6))
