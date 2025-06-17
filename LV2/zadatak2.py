@@ -14,7 +14,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 try:
-    data = np.loadtxt("PSU_LV/LV2/mtcars.csv", delimiter=",", skiprows=1, usecols=(1, 2, 3, 4, 5, 6))
+    data = np.loadtxt("LV-PSU/LV2/mtcars.csv", delimiter=",", skiprows=1, usecols=(1, 2, 3, 4, 5, 6))
 except FileNotFoundError:
     print("Datoteka mtcars.csv nije pronađena.")
     exit()
