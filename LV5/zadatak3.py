@@ -9,7 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.tree import DecisionTreeClassifier, plot_tree
 
-df = pd.read_csv('C:\\Users\\student\\Desktop\\lV5\\occupancy_processed.csv')
+df = pd.read_csv('C:\\Users\\student\\Desktop\\LV5\\occupancy_processed.csv')
 
 scaler = StandardScaler()
 scaled_data = scaler.fit_transform(df)
