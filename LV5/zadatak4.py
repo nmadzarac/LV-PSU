@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report
 
-df = pd.read_csv('C:\\Users\\student\\Desktop\\lV5\\occupancy_processed.csv')
+df = pd.read_csv('C:\\Users\\student\\Desktop\\LV5\\occupancy_processed.csv')
 
 feature_names = ['S3_Temp', 'S5_CO2']
 target_name = 'Room_Occupancy_Count'
