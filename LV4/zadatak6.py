@@ -12,7 +12,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, r2_score, mean_squared_error, max_error
 
-df = pd.read_csv('C:\\Users\\Nikola\\Desktop\\cars_processed.csv')
+df = pd.read_csv('C:\\Users\\Nikola\\Desktop\\LV4\\cars_processed.csv')
 print(df.head())
 
 df = df.drop(columns=['name'])
