@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 from sklearn.cluster import KMeans
 
-imageNew = mpimg.imread('C:/Users/student/Desktop/LV6_ciki/example_grayscale.png')
+imageNew = mpimg.imread('C:/Users/student/Desktop/LV6/example_grayscale.png')
 
 if len(imageNew.shape) == 2:
     imageNew = np.stack([imageNew] * 3, axis=-1)
