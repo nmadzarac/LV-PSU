@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 model = tf.keras.models.load_model("best_model.h5")
 
 # Učitavanje slike prometnog znaka (putanja do tvoje slike)
-img_path = "1_PUqOk2vDqOHezlnurjwCrQ.png"  # promijeni u stvarnu putanju
+img_path = "1_PUqOk2vDqOHezlnurjwCrQ.png" 
 img = cv2.imread(img_path)
 
 # Provjera i priprema slike
