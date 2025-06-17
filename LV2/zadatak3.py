@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-slika = plt.imread("C:\\Users\\Matija ciki\\Desktop\\LV2\\tiger.png")
+slika = plt.imread("C:\\Users\\Nikola\\Desktop\\LV2\\tiger.png")
 slika_gray = slika[:, :, 0].copy()
 
 slika_svjetlija = slika_gray + 0.6
